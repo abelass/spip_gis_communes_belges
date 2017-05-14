@@ -1,0 +1,46 @@
+<paquet
+	prefix="spip_gis_communes_belges"
+	categorie="multimedia"
+	version="1.0.0"
+	etat="dev"
+	compatibilite="[3.0.24;3.1.*]"
+	logo=""
+	documentation=""
+	schema="1.0.0" 
+>
+	<!--
+		Paquet généré le 2017-05-14 12:00:26
+		(Vous pouvez bien entendu supprimer ces commentaires) 
+	-->
+
+	<nom>Gis communes belges</nom>
+	
+
+	<!-- cette balise peut être présente plusieurs fois s'il y a plusieurs auteurs --> 
+	<auteur>Rainer</auteur>
+
+	<licence>GNU/GPL</licence>
+
+	<!--
+		Exemple de commandes
+		* dependances
+		<necessite nom="saisies" compatibilite="[2.4.0;]" />
+		<utilise nom="saisies" compatibilite="[2.4.0;]" />
+		<lib nom="simplehtmldom" lien="http://chemin_vers_archive.zip" />
+		* pipelines
+		<pipeline nom="autoriser" inclure="spip_gis_communes_belges_autorisations.php" />
+		<pipeline nom="insert_head" inclure="spip_gis_communes_belges_pipelines.php" />
+		* declarer un pipeline 
+		<pipeline nom="mon_pipeline" action="" />
+		* parents de menus de SPIP :
+				menu_accueil (à éviter), menu_edition, menu_publication,
+				menu_activite, menu_squelette, menu_administration, menu_configuration 
+		<menu nom="spip_gis_communes_belges" titre="spip_gis_communes_belges:spip_gis_communes_belges_titre" parent="menu_edition"  icone="images/spip_gis_communes_belges-16.png" />
+		* parents d'onglets... configuration, plugins, statistiques, ... 
+		<onglet nom="spip_gis_communes_belges" titre="spip_gis_communes_belges:spip_gis_communes_belges_titre" parent="configuration" icone="images/spip_gis_communes_belges-24.png" />
+	-->
+
+
+
+
+</paquet>
