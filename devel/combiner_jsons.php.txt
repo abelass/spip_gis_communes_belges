@@ -1,7 +1,7 @@
 <?php
 //header("Content-Type: text/json; charset=utf-8");
 $polygones = json_decode(file_get_contents('../data/communes_belges.geojson'), TRUE);
-$points = json_decode(fixBadUnicode(file_get_contents('../data/zipcode-belgium.json')), TRUE);
+$points = json_decode(file_get_contents('../data/zipcode-belgium.json'), TRUE);
 $mapping = json_decode(file_get_contents('../data/name_mapping.json'), TRUE);
 
 $communes = [];
@@ -29,14 +29,6 @@ foreach($polygones['features'] AS $feature){
 	}
 	else {
 		$erreurs[] = $fr;
-		$add = array();
-	}
-	if ($donnees_commune) {
-		$add = array (
-			'lat' => $donnees_commune['lat'],
-			'lng' => $donnees_commune['lng'],
-			'zip' => $donnees_commune['zip'],
-		);
 	}
 
 
@@ -45,18 +37,16 @@ foreach($polygones['features'] AS $feature){
 				'fr' => $fr,
 				'nl' => $nl,
 			),
-		$add,
 		'polygone' => $feature['geometry']['coordinates'],
 	);
+	if ($donnees_commune) {
+		$donnes_combines[$commune]['lat'] =$donnees_commune['lat'];
+		$donnes_combines[$commune]['lng'] =$donnees_commune['lng'];
+		$donnes_combines[$commune]['zip'] =$donnees_commune['zip'];
+	}
 }
 $fp = fopen('../data/erreurs.json', 'w') or die("Unable to open file!");
 fwrite($fp, json_encode($erreurs, JSON_UNESCAPED_UNICODE));
 $fp = fopen('../data/complete_data.json', 'w') or die("Unable to open file!");
 fwrite($fp, json_encode($donnes_combines, JSON_UNESCAPED_UNICODE));
 fclose($fp);
-
-//print_r($donnes_combines);
-
-function fixBadUnicode($str) {
-	return utf8_decode(preg_replace("/\\\\u00([0-9a-f]{2})\\\\u00([0-9a-f]{2})/e", 'chr(hexdec("$1")).chr(hexdec("$2"))', $str));
-}
