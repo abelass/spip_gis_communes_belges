@@ -17,7 +17,7 @@ function gis_cb_importer_points() {
 			'titre' => '<multi>[fr]' . $nom_fr. '[nl]' . $nom_nl. '</multi>',
 			'lat' => $values['lat'],
 			'lon' => $values['lng'],
-			'geo' => "ST_GeomFromText('$wkt')",
+			'geo' => "GeomFromText('$wkt')",
 			'zoom' => 11,
 			'type' => 'Multipolygon',
 			'pays' => '<multi>[fr]Belgique[nl]België</multi>',
