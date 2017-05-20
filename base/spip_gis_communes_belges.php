@@ -26,6 +26,6 @@ function gis_cb_importer_points() {
 			'code_postal' => $values['zip'],
 			);
 	}
-	sql_insertq_multi('spip_gis' , $set);
+	sql_insertq_multi('spip_gis', $set);
 }
 
