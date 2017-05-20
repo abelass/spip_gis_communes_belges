@@ -37,7 +37,7 @@ foreach($polygones['features'] AS $feature){
 				'fr' => $fr,
 				'nl' => $nl,
 			),
-		'polygone' => $feature['geometry']['coordinates'],
+		'polygon' => $feature['geometry']['coordinates'],
 	);
 	if ($donnees_commune) {
 		$donnes_combines[$commune]['lat'] =$donnees_commune['lat'];
