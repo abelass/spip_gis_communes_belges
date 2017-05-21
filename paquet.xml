@@ -1,12 +1,12 @@
 <paquet
-	prefix="spip_gis_communes_belges"
+	prefix="gis_communes_belges"
 	categorie="multimedia"
-	version="1.0.0"
+	version="1.0.1"
 	etat="dev"
 	compatibilite="[3.0.24;3.1.*]"
 	logo="prive/themes/spip/images/spip_gis_communes_belges-64.png"
 	documentation=""
-	schema="1.0.0"
+	schema="1.0.2"
 >
 	<!--
 		Paquet généré le 2017-05-14 12:00:26

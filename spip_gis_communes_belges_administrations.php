@@ -34,6 +34,7 @@ function spip_gis_communes_belges_upgrade($nom_meta_base_version, $version_cible
 	include_spip('base/spip_gis_communes_belges');
 	$maj = array();
 	$maj['create']  = array(array('gis_cb_importer_points'));
+	$maj['1.0.2']  = array(array('gis_cb_importer_points'));
 
 
 	include_spip('base/upgrade');
