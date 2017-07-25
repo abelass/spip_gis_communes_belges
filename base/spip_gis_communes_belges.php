@@ -5,6 +5,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 }
 
 function gis_cb_importer_points() {
+	include_spip('gisgeom_fonctions');
 	$json = json_decode(file_get_contents(__DIR__ . '/../data/complete_data.json'), TRUE);
 
 	$set = array();
